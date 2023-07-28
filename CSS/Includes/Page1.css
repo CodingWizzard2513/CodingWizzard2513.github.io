@@ -1,0 +1,33 @@
+@import url("Fonts/Fonts.css");
+
+a {
+	display: grid;
+}
+
+body {
+	display: grid;
+}
+
+.Header {
+	font-family: 'Montserrat', sans-serif;
+}
+
+#NSButton {
+	justify-self: center;
+	align-self: center;
+	outline-color: #03A1FF;
+	border-color: #03A1FF;
+	border-bottom-color: #03A1FF;
+	border-left-color: #03A1FF;
+	border-right-color: #03A1FF;
+	border-top-color: #03A1FF;
+	color: DimGrey;
+	background-color: #ffffff00;
+	border-radius: 4px;
+	font-size: 24px;
+	font-family: 'Abel', sans-serif;
+	padding: 10px;
+	margin: 10px;
+	width: 300px;
+	transition: all 0.3s ease 0s;
+}
