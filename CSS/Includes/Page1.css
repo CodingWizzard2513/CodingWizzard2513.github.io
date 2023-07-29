@@ -1,9 +1,5 @@
 @import url("Fonts/Fonts.css");
 
-a {
-	display: grid;
-}
-
 body {
 	display: grid;
 }
@@ -11,10 +7,16 @@ body {
 .Header {
 	font-family: 'Montserrat', sans-serif;
 }
+.Buttons {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 
 #NSButton {
-	justify-self: center;
-	align-self: center;
 	outline-color: #03A1FF;
 	border-color: #03A1FF;
 	border-bottom-color: #03A1FF;
