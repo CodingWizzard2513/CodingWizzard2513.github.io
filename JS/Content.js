@@ -1,3 +1,3 @@
 function NSOpen() {
-	open("./Projects/Nitro-Shop", "_self")
+	open("./Projects/Nitro-Shop", "_self");
 }
