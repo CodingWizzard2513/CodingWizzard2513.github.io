@@ -39,39 +39,6 @@
       .Clue:hover {
         background-color: #3e8e41;
       }
-      
-      hr.rounded {
-        border-top: 8px solid #bbb;
-        border-radius: 5px;
-        border-color: #221e2e;
-      }
-      
-       hr.invisible {
-        border-top: 8px solid #bbb;
-        border-radius: 5px;
-        visibility: hidden;
-      }
-      
-      .whitespace {
-        width: 100%;
-        height: 57%;
-        background-color: #f7f7f7;
-      }
-      
-      #ans2 {
-        color: white;
-      }
-      
-      #puzzle {
-        height: 82%;
-        width: 82%;
-      }
-      
-      #cipher {
-        height: 80%;
-        width: 80%;
-      }
-      
     </style>
   </head>
   <body>
@@ -79,182 +46,17 @@
       <div class="Info">
         <h1>Escape Room</h1>
         <h3>Use the clues to find hidden codes!</h3>
-        <form>
-          <input type="text" id="digit1" name="digit1" class="Code" maxlength='1'  style="width: 48px; height: 48px; font-size: 48px; text-align: center;">
-          <input type="text" id="digit2" name="digit2" class="Code" maxlength='1' style="width: 48px; height: 48px; font-size: 48px; text-align: center;">
-          <input type="text" id="digit3" name="digit3" class="Code" maxlength='1'  style="width: 48px; height: 48px; font-size: 48px; text-align: center;">
-          <input type="text" id="digit4" name="digit4" class="Code"  maxlength='1' style="width: 48px; height: 48px; font-size: 48px; text-align: center;">
-          <input type="text" id="digit5" name="digit5" class="Code"  maxlength='1' style="width: 48px; height: 48px; font-size: 48px; text-align: center;">
-          <input type="text" id="digit6" name="digit6" class="Code"  maxlength='1' style="width: 48px; height: 48px; font-size: 48px; text-align: center;">
-        </form>
-        <button class="Clue" onclick="H1Click()">Digit 1 Clue</button>
-        <button class="Clue" onclick="H2Click()">Digit 2 Clue</button>
-        <button class="Clue" onclick="H3Click()">Digit 3 Clue</button>
-        <button class="Clue" onclick="H4Click()">Digit 4 Clue</button>
-        <button class="Clue" onclick="H5Click()">Digit 5 Clue</button>
-        <button class="Clue" onclick="H6Click()">Digit 6 Clue</button>
-        <hr class="rounded">
-        <div class="whitespace">
-          <hr class="invisible">
-          <div class="Hints">
-            <p1 id="ClueText"><b>Clues Will Appear Here</b></p1>
-            <p1 id="ans2">3</p1>
-            <img id="puzzle" src="Puzzle.svg"></img>
-            <img id="cipher" src="Cipher.png"></img>
-            <p1 id="Signature" style="display: block;">By CodingWizzard2513</p1>
-         </div>
-        </div>
+          <button id="startbutton" class="Clue" onclick="Start()">Click To Start</button>
+      </div>
     </center>
-    <script src="confetti.js"></script>
-    <script  type="text/javascript"> 
-      document.getElementById("ans2").style.display = "none";
-      document.getElementById("puzzle").style.display = "none";
-      document.getElementById("cipher").style.display = "none";
-      function H1Click() {
-        var audio = new Audio('Click.wav');
-        audio.play();
-        document.getElementById("ClueText").innerHTML = "What is considered a, 'Lucky Number'?";
-        document.getElementById("ans2").style.display = "none";
-        document.getElementById("puzzle").style.display = "none";
-        document.getElementById("cipher").style.display = "none";
+    <script  type="text/javascript">
+      function Start() {
+        var BGM = new Audio('BGM.mp3');
+        BGM.play();
+        BGM.loop = true;
+        document.getElementById("startbutton").style.display = "none";
+        window.open("game.html");
       }
-      function H2Click() {
-        var audio = new Audio('Click.wav');
-        audio.play();
-        document.getElementById("ClueText").innerHTML = "Digit 2 is  ";
-        document.getElementById("ans2").style.display = "inline";
-        document.getElementById("puzzle").style.display = "none";
-        document.getElementById("cipher").style.display = "none";
-      }
-      function H3Click() {
-        var audio = new Audio('Click.wav');
-        audio.play();
-        document.getElementById("ClueText").innerHTML = "Goto https://scratch.mit.edu/projects/977230767/ and decode 14 19 17 19 30 80 30 18 28 15 15 80 19 29 80 16 19 32 15";
-        document.getElementById("ans2").style.display = "none";
-        document.getElementById("puzzle").style.display = "none";
-        document.getElementById("cipher").style.display = "none";
-      }
-      function H4Click() {
-        var audio = new Audio('Click.wav');
-        audio.play();
-        document.getElementById("ClueText").innerHTML = "ਇਹ 'ਪੰਜਾਬੀ' ਹੈ, 'ਅੰਕ ਚਾਰ ਅੱਠ' ਲਈ।";
-        document.getElementById("ans2").style.display = "none";
-        document.getElementById("puzzle").style.display = "none";
-        document.getElementById("cipher").style.display = "none";
-      }
-      function H5Click() {
-        var audio = new Audio('Click.wav');
-        audio.play();
-        document.getElementById("ClueText").innerHTML = "Unscramble the first letters of all the answers";
-        document.getElementById("ans2").style.display = "none";
-        document.getElementById("puzzle").style.display = "block";
-        document.getElementById("cipher").style.display = "none";
-      }
-      function H6Click() {
-        var audio = new Audio('Click.wav');
-        audio.play();
-        document.getElementById("ClueText").innerHTML = "Decode the 'Pigpen Cipher' shown below";
-        document.getElementById("ans2").style.display = "none";
-        document.getElementById("puzzle").style.display = "none";
-        document.getElementById("cipher").style.display = "block";
-      }
-      var digi1 = document.getElementById("digit1");
-      var digi2 = document.getElementById("digit2");
-      var digi3 = document.getElementById("digit3");
-      var digi4 = document.getElementById("digit4");
-      var digi5 = document.getElementById("digit5");
-      var digi6 = document.getElementById("digit6");
-      var elts = document.getElementsByClassName('Code')
-      Array.from(elts).forEach(function(elt){
-        elt.addEventListener("keyup", function(event) {
-          // Number 13 is the "Enter" key on the keyboard
-          if (event.keyCode === 13 || elt.value.length == 1 ) {
-          // Focus on the next sibling
-          elt.nextElementSibling.focus()
-          }
-          if (event.keyCode === 8 && elt.value.length == 0) {
-            // Focus on the previous sibling
-            elt.previousElementSibling.focus()
-          }
-        });
-      })
-        digi1.addEventListener("keyup", function(event) {
-          if (digi1.value.length == 1) {
-            if (digi1.value == 7) {
-              digi1.style.borderColor = "#1ae000 ";
-            }
-            if (digi1.value != 7) {
-              digi1.style.borderColor = "red";
-            }
-          }
-        })
-        digi2.addEventListener("keyup", function(event) {
-          if (digi2.value.length == 1) {
-            if (digi2.value == 3) {
-              digi2.style.borderColor = "#1ae000 ";
-            }
-            if (digi2.value != 3) {
-              digi2.style.borderColor = "red";
-            }
-          }
-        })
-        digi3.addEventListener("keyup", function(event) {
-          if (digi3.value.length == 1) {
-            if (digi3.value == 5) {
-              digi3.style.borderColor = "#1ae000 ";
-            }
-            if (digi3.value != 5) {
-              digi3.style.borderColor = "red";
-            }
-          }
-        })
-        digi4.addEventListener("keyup", function(event) {
-          if (digi4.value.length == 1) {
-            if (digi4.value == 8) {
-              digi4.style.borderColor = "#1ae000 ";
-            }
-            if (digi4.value != 8) {
-              digi4.style.borderColor = "red";
-            }
-          }
-        })
-        digi5.addEventListener("keyup", function(event) {
-          if (digi5.value.length == 1) {
-            if (digi5.value == 2) {
-              digi5.style.borderColor = "#1ae000 ";
-            }
-            if (digi5.value != 2) {
-              digi5.style.borderColor = "red";
-            }
-          }
-        })
-          digi6.addEventListener("keyup", function(event) {
-            if (digi6.value.length == 1) {
-              if (digi6.value == 4) {
-                digi6.style.borderColor = "#1ae000 ";
-              }
-              if (digi6.value != 4) {
-                digi6.style.borderColor = "red";
-              }
-            }
-            if (digi1.value == 7 && digi2.value == 3 && digi3.value == 5 && digi4.value == 8 && digi5.value == 2 && digi6.value == 4 && event.keyCode === 13) {
-                document.getElementById("ClueText").innerHTML = "Congrats! You completed the escape room!";
-                const start = () => {
-                setTimeout(function() {
-                    confetti.start()
-                }, 1000); 
-            };
-
-            const stop = () => {
-                setTimeout(function() {
-                    confetti.stop()
-                }, 5000);
-            };
-            start();
-            stop();
-
-            }
-          })
-      </script>
+    </script>
   </body>
 </html>
