@@ -110,9 +110,11 @@
       document.getElementById("ans2").style.display = "none";
       document.getElementById("puzzle").style.display = "none";
       document.getElementById("cipher").style.display = "none";
-      var bgm = new Audio('BGM.mp3');
-      bgm.play();
-      bgm.loop = true;
+      document.onclick= function(event) {
+        var bgm = new Audio('BGM.mp3');
+        bgm.play();
+        bgm.loop = true;
+      };
       function H1Click() {
         var audio = new Audio('Click.wav');
         audio.play();
