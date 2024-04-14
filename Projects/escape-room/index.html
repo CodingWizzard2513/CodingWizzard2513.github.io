@@ -110,14 +110,14 @@
       document.getElementById("ans2").style.display = "none";
       document.getElementById("puzzle").style.display = "none";
       document.getElementById("cipher").style.display = "none";
-      function PlayBGM() {
-        if (isbgm == 0) {
+      function PlayBGM(check) {
+        if (check == 0) {
           console.log("Ran PlayBGM");
           bgm.play();
           console.log("Looping");
           bgm.loop = true;
           console.log("Changing isbgm value...");
-          var isbgm = 1;
+          var check = 1;
           console.log(isbgm);
         }
       }
@@ -128,7 +128,7 @@
         console.log("Loading BGM");
         var bgm = new Audio('BGM.mp3');
         console.log("Playing...");
-        PlayBGM();
+        PlayBGM(isbgm);
       }
       
       function H1Click() {
