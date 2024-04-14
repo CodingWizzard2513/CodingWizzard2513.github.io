@@ -74,7 +74,7 @@
       
     </style>
   </head>
-  <body onclick="Start(); this.onclick=null;">
+  <body>
       <center>
       <div class="Info">
         <h1>Escape Room</h1>
@@ -124,14 +124,24 @@
         }
       }
       
-      function Start() {
+
+      document.onclick= function(event) {
+        if (event===undefined) event= window.event;
+        var target= 'target' in event? event.target : event.srcElement;
         console.log("Ran Start");
         let isbgm = 0;
         console.log("Loading BGM");
         var bgm = new Audio('BGM.mp3');
-        console.log("Playing...");
-        PlayBGM(isbgm, bgm);
-      }
+        if (isbgm == 0) {
+          console.log("Ran PlayBGM");
+          bgm.play();
+          console.log("Looping");
+          bgm.loop = true;
+          console.log("Changing isbgm value...");
+          var isbgm = 1;
+          console.log(isbgm);
+        }
+      };
       
       function H1Click() {
         var audio = new Audio('Click.wav');
