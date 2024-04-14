@@ -110,39 +110,6 @@
       document.getElementById("ans2").style.display = "none";
       document.getElementById("puzzle").style.display = "none";
       document.getElementById("cipher").style.display = "none";
-      function PlayBGM(check, bgm) {
-        if (check == 0) {
-          console.log("Ran PlayBGM");
-          bgm.play();
-          console.log("Looping");
-          bgm.loop = true;
-          var bgm = null;
-          console.log("Changing isbgm value...");
-          var check = 1;
-          console.log(isbgm);
-          delete window.PlayBGM;
-        }
-      }
-      
-
-      document.onclick= function(event) {
-        if (event===undefined) event= window.event;
-        var target= 'target' in event? event.target : event.srcElement;
-        console.log("Ran Start");
-        let isbgm = 0;
-        console.log("Loading BGM");
-        var bgm = new Audio('BGM.mp3');
-        if (isbgm == 0) {
-          console.log("Ran PlayBGM");
-          bgm.play();
-          console.log("Looping");
-          bgm.loop = true;
-          console.log("Changing isbgm value...");
-          var isbgm = 1;
-          console.log(isbgm);
-        }
-      };
-      
       function H1Click() {
         var audio = new Audio('Click.wav');
         audio.play();
