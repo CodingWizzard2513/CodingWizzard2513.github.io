@@ -110,10 +110,14 @@
       document.getElementById("ans2").style.display = "none";
       document.getElementById("puzzle").style.display = "none";
       document.getElementById("cipher").style.display = "none";
+      var isbgm = 0;
       function PlayBGM() {
-        var bgm = new Audio('BGM.mp3');
-        bgm.play();
-        bgm.loop = true;
+        if (!isbgm == 1) {
+          var bgm = new Audio('BGM.mp3');
+          bgm.play();
+          bgm.loop = true;
+          var isbgm = 1;
+        }
       }
       function H1Click() {
         var audio = new Audio('Click.wav');
