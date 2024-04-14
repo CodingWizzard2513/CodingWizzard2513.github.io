@@ -112,16 +112,22 @@
       document.getElementById("cipher").style.display = "none";
       function PlayBGM() {
         if (isbgm == 0) {
+          console.log("Ran PlayBGM");
           bgm.play();
+          console.log("Looping");
           bgm.loop = true;
+          console.log("Changing isbgm value...");
           var isbgm = 1;
           console.log(isbgm);
         }
       }
       
       function Start() {
+        console.log("Ran Start");
         let isbgm = 0;
+        console.log("Loading BGM");
         var bgm = new Audio('BGM.mp3');
+        console.log("Playing..."):
         PlayBGM();
       }
       
