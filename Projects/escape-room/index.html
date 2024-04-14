@@ -110,7 +110,7 @@
       document.getElementById("ans2").style.display = "none";
       document.getElementById("puzzle").style.display = "none";
       document.getElementById("cipher").style.display = "none";
-      function PlayBGM(check) {
+      function PlayBGM(check, bgm) {
         if (check == 0) {
           console.log("Ran PlayBGM");
           bgm.play();
@@ -128,7 +128,7 @@
         console.log("Loading BGM");
         var bgm = new Audio('BGM.mp3');
         console.log("Playing...");
-        PlayBGM(isbgm);
+        PlayBGM(isbgm, bgm);
       }
       
       function H1Click() {
