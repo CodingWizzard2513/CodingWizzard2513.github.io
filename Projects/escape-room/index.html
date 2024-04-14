@@ -74,7 +74,7 @@
       
     </style>
   </head>
-  <body onclick="PlayBGM()">
+  <body onclick="Start()">
       <center>
       <div class="Info">
         <h1>Escape Room</h1>
@@ -110,8 +110,6 @@
       document.getElementById("ans2").style.display = "none";
       document.getElementById("puzzle").style.display = "none";
       document.getElementById("cipher").style.display = "none";
-      var isbgm = 0;
-      var bgm = new Audio('BGM.mp3');
       function PlayBGM() {
         if (isbgm == 0) {
           bgm.play();
@@ -120,6 +118,13 @@
           console.log(isbgm);
         }
       }
+      
+      function Start() {
+        var isbgm = 0;
+        var bgm = new Audio('BGM.mp3');
+        PlayBGM();
+      }
+      
       function H1Click() {
         var audio = new Audio('Click.wav');
         audio.play();
