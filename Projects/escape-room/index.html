@@ -237,7 +237,7 @@
                 digi6.style.borderColor = "red";
               }
             }
-            if (digi1.value == 7 && digi2.value == 3 && digi3.value == 5 && digi4.value == 8 && digi5.value == 2 && digi6.value == 4) {
+            if (digi1.value == 7 && digi2.value == 3 && digi3.value == 5 && digi4.value == 8 && digi5.value == 2 && digi6.value == 4 && event.keyCode === 13) {
                 document.getElementById("ClueText").innerHTML = "Congrats! You completed the escape room!";
                 const start = () => {
                 setTimeout(function() {
