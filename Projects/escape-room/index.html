@@ -111,9 +111,9 @@
       document.getElementById("puzzle").style.display = "none";
       document.getElementById("cipher").style.display = "none";
       var isbgm = 0;
+      var bgm = new Audio('BGM.mp3');
       function PlayBGM() {
         if (isbgm == 0) {
-          var bgm = new Audio('BGM.mp3');
           bgm.play();
           bgm.loop = true;
           var isbgm = 1;
