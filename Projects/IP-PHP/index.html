@@ -1,0 +1,15 @@
+<?php
+require('UserInfo.php');
+?>
+
+<!DOCTYPE html>
+	<head>
+		<title>IP Pawn V0.0.1</title>
+	</head>
+	<body>
+		<center>
+			<h1>You've Been Pawned!</h1>
+			<h2><?= UserInfo::get_ip();?></h2>
+		</center>
+	</body>
+</html>
