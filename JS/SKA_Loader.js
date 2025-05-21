@@ -1,3 +1,14 @@
+//JQuery Setup
+var jq = document.createElement("script");
+jq.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+jq.type = "text/javascript";
+jq.onload = function () {
+    console.log("jQuery loaded successfully!");
+};
+document.head.appendChild(jq);
+
+
+
 var source = window.location.origin + "/Libraries/SirKingAccount/";
 
 function LogIn() {
@@ -7,7 +18,7 @@ function LogIn() {
         console.log('Received data:', event.data);
 		if(event.data.type == "signup") {
 			if(!event.data.email == "") {
-				if(event.data.email.includes("@k12.vcsdny.org")) {
+				if(event.data.email.endsWith("@k12.vcsdny.org")) { 
 					LogInPage.postMessage({ type: 'error', error: 'school' }, '*');
 				}
 			}
