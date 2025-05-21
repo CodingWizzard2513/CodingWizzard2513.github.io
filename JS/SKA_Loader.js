@@ -11,6 +11,17 @@ function LogIn() {
 					LogInPage.postMessage({ type: 'error', error: 'school' }, '*');
 				}
 			}
+
+			var PHP = source + "requests.php";
+			$.ajax({
+		            type : "POST", 
+		            url  : PHP,
+		            data : event.data,
+		            success: function(res){  
+				    LogInPage.postMessage({ type: 'success' }, '*');
+		        	}
+			});
+    }
 		}
     	});
 }
