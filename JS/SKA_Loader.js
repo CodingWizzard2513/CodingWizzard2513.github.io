@@ -17,7 +17,7 @@ function LogIn() {
 	window.addEventListener('message', (event) => {
         console.log('Received data:', event.data);
 		if(event.data.type == "signup") {
-			if(!event.data.email == "") {
+			if(event.data.email !== "") {
 				if(event.data.email.endsWith("@k12.vcsdny.org")) { 
 					LogInPage.postMessage({ type: 'error', error: 'school' }, '*');
 				}
